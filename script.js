@@ -48,6 +48,7 @@ btn.addEventListener("click",()=>{
   let lastBufferedSeconds = 0
   return function(){
     let bufferedSeconds = preloadVideo.buffered.end(0) - preloadVideo.buffered.start(0);
+    bufferedSeconds = bufferedSeconds.toFixed(2)
     if(bufferedSeconds === lastBufferedSeconds) return
     lastBufferedSeconds = bufferedSeconds;
     log("preload video buffered "+ bufferedSeconds + ' seconds of video to play!');
@@ -64,6 +65,7 @@ function createPreloadVideo(el,url){
   video.setAttribute("x5-video-orientation","portraint")
   video.setAttribute("x-webkit-airplay","allow")
   el.appendChild(video);
+  video.load();
   return video;
 }
 function log(str){
