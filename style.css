@@ -17,10 +17,11 @@ video{
   border-radius:10px;
   cursor:pointer;
   position:absolute;
-  top:70%;
+  top:10%;
   left:50%;
   transform:translateX(-50%);
   display:none;
+  padding:10px;
 }
 .switch.show{
   display:block;
