@@ -4,7 +4,6 @@ var wrapper = document.querySelector(".wrapper")
 var btn = document.querySelector(".switch")
 var playing = document.querySelector(".playing")
 var preloadVideo;
-var csl = document.querySelector(".console")
 
 playing.addEventListener("loadstart",()=>{
   let bufferInterval;
@@ -56,5 +55,6 @@ function createPreloadVideo(el,url){
   return video;
 }
 function log(str){
+  var csl = document.querySelector(".console")
   csl.innerHTML+="<div>"+str+"</div>";
 }
