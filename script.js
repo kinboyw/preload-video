@@ -72,7 +72,7 @@ function createPreloadVideo(el,url){
   video.setAttribute("x5-video-orientation","portraint")
   video.setAttribute("x-webkit-airplay","allow")
   el.appendChild(video);
-  video.load();
+  //video.load();
   return video;
 }
 function log(str){
