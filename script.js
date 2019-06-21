@@ -18,6 +18,7 @@ playing.addEventListener("loadstart",()=>{
   })
   
   preloadVideo.addEventListener('loadedmetadata', function() {
+    log("preload video loadedmetadata")
     if (preloadVideo.buffered.length === 0) return;
     
     clearInterval(bufferInterval)
@@ -25,6 +26,7 @@ playing.addEventListener("loadstart",()=>{
   });
 
   preloadVideo.addEventListener('canplaythrough', function() {
+    log("preload video canplaythrough")
     if (preloadVideo.buffered.length === 0) return;
     
     clearInterval(bufferInterval)
