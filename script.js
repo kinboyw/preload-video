@@ -51,6 +51,11 @@ function createPreloadVideo(el,url){
   video.preload="auto";
   video.controls = "true";
   video.src = url;
+  video.setAttribute("playsinline","true")
+  video.setAttribute("x5-video-player-type","h5")
+  video.setAttribute("x5-video-player-fullscreen","true")
+  video.setAttribute("x5-video-orientation","portraint")
+  video.setAttribute("x-webkit-airplay","allow")
   el.appendChild(video);
   return video;
 }
