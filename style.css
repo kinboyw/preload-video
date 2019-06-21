@@ -1,6 +1,10 @@
+body{
+  background-color: black;
+}
 video{
   width:100%;
   display:none;
+  background-color: black;
 }
 .playing{
   display:block;
