@@ -46,11 +46,13 @@ playing.addEventListener("loadstart",()=>{
     bufferInterval = setInterval(showBuffered,100)
   });
 })
+
 btn.addEventListener("click",()=>{
   var play = document.querySelector(".playing")
   $(play).removeClass("playing")
   preloadVideo.classList.add("playing")
   preloadVideo.play();
+  preloadVideo.currentTime = 3;
 })
 
  var showBuffered = (()=>{
@@ -63,6 +65,7 @@ btn.addEventListener("click",()=>{
     log("preload video buffered "+ bufferedSeconds + ' seconds of video to play!');
   }
 })()
+
 function createPreloadVideo(el,url){
   var video = document.createElement("video");
   video.preload="auto";
