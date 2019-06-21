@@ -49,8 +49,8 @@ playing.addEventListener("loadstart",()=>{
 
 btn.addEventListener("click",()=>{
   var play = document.querySelector(".playing")
-  $(play).removeClass("playing")
   preloadVideo.classList.add("playing")
+  $(play).removeClass("playing")
   preloadVideo.play();
   preloadVideo.currentTime = 3;
 })
