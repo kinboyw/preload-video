@@ -9,7 +9,7 @@ playing.addEventListener("timeupdate",()=>{
   if(playing.currentTime > 3 && !btn.classList.contains("show")){
       btn.classList.add("show");
   }
-  if(playing.currentTime > 10 && btn.classList.contains("show")){
+  if(playing.currentTime > 20 && btn.classList.contains("show")){
       btn.classList.remove("show");
   }
 })
