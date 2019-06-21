@@ -1,3 +1,6 @@
+.wrapper{
+  position:relative;
+}
 video{
   width:100%;
   display:none;
@@ -12,6 +15,14 @@ video{
   margin-top:10px;
   border-radius:10px;
   cursor:pointer;
+  position:absolute;
+  top:70%;
+  left:50%;
+  transform:translateX(-50%);
+  display:none;
+}
+.switch.show{
+  display:block;
 }
 .console{
   margin-top:10px;

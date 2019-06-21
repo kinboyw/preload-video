@@ -5,6 +5,14 @@ var btn = document.querySelector(".switch")
 var playing = document.querySelector(".playing")
 var preloadVideo;
 
+playing.addEventListener("timeupdate",()=>{
+  if(playing.currentTime > 10 && !btn.classList.contains("show")){
+      btn.classList.add("show");
+  }
+  if(playing.currentTime > 20 && btn.classList.contains("show")){
+      btn.classList.remove("show");
+  }
+})
 playing.addEventListener("loadstart",()=>{
   let bufferInterval;
   log("preload video start to create")
@@ -48,11 +56,12 @@ playing.addEventListener("loadstart",()=>{
 })
 
 btn.addEventListener("click",()=>{
+  btn.classList.remove("show");
   var play = document.querySelector(".playing")
   preloadVideo.classList.add("playing")
-  $(play).removeClass("playing")
   preloadVideo.play();
   preloadVideo.currentTime = 3;
+  $(play).removeClass("playing")
 })
 
  var showBuffered = (()=>{
