@@ -20,6 +20,7 @@ playing.addEventListener("loadstart",()=>{
   preloadVideo.addEventListener('loadedmetadata', function() {
     if (preloadVideo.buffered.length === 0) return;
     
+    clearInterval(bufferInterval)
     bufferInterval = setInterval(showBuffered(),100)
   });
 
@@ -29,6 +30,12 @@ playing.addEventListener("loadstart",()=>{
   preloadVideo.addEventListener("play",()=>{
     log("preload video start to play")
   })
+  preloadVideo.addEventListener('timeupdate', function() {
+    if (preloadVideo.buffered.length === 0) return;
+    
+    clearInterval(bufferInterval)
+    bufferInterval = setInterval(showBuffered(),100)
+  });
 })
 btn.addEventListener("click",()=>{
   var play = document.querySelector(".playing")
