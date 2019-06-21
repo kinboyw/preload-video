@@ -6,10 +6,10 @@ var playing = document.querySelector(".playing")
 var preloadVideo;
 
 playing.addEventListener("timeupdate",()=>{
-  if(playing.currentTime > 10 && !btn.classList.contains("show")){
+  if(playing.currentTime > 3 && !btn.classList.contains("show")){
       btn.classList.add("show");
   }
-  if(playing.currentTime > 20 && btn.classList.contains("show")){
+  if(playing.currentTime > 10 && btn.classList.contains("show")){
       btn.classList.remove("show");
   }
 })
@@ -62,6 +62,8 @@ btn.addEventListener("click",()=>{
   preloadVideo.play();
   preloadVideo.currentTime = 3;
   $(play).removeClass("playing")
+  play.remove();
+  btn.remove();
 })
 
  var showBuffered = (()=>{

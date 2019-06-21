@@ -11,6 +11,7 @@ video{
 }
 
 .switch{
+  background-color:rgba(255,255,255,0.5);
   font-size:24px;
   margin-top:10px;
   border-radius:10px;
