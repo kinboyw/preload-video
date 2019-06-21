@@ -21,7 +21,7 @@ playing.addEventListener("loadstart",()=>{
     if (preloadVideo.buffered.length === 0) return;
     
     clearInterval(bufferInterval)
-    bufferInterval = setInterval(showBuffered(),100)
+    bufferInterval = setInterval(showBuffered,100)
   });
 
   preloadVideo.addEventListener("loadeddata",()=>{
@@ -34,7 +34,7 @@ playing.addEventListener("loadstart",()=>{
     if (preloadVideo.buffered.length === 0) return;
     
     clearInterval(bufferInterval)
-    bufferInterval = setInterval(showBuffered(),100)
+    bufferInterval = setInterval(showBuffered,100)
   });
 })
 btn.addEventListener("click",()=>{
@@ -44,7 +44,7 @@ btn.addEventListener("click",()=>{
   preloadVideo.play();
 })
 
-function showBuffered(){
+ var showBuffered = (()=>{
   let lastBufferedSeconds = 0
   return function(){
     let bufferedSeconds = preloadVideo.buffered.end(0) - preloadVideo.buffered.start(0);
@@ -52,7 +52,7 @@ function showBuffered(){
     lastBufferedSeconds = bufferedSeconds;
     log("preload video buffered "+ bufferedSeconds + ' seconds of video to play!');
   }
-}
+})()
 function createPreloadVideo(el,url){
   var video = document.createElement("video");
   video.preload="auto";
