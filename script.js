@@ -95,3 +95,12 @@ function log(str){
   var csl = document.querySelector(".console")
   csl.innerHTML+="<div>"+str+"</div>";
 }
+
+var qrbtn = document.querySelector(".showqrcode");
+qrbtn.addEventListener("click",()=>{
+  var qrcode = document.querySelector(".qrcode");
+  qrcode.classList.add("show");
+  qrcode.addEventListener("click",()=>{
+    qrcode.classList.remove("show");
+  })
+})
